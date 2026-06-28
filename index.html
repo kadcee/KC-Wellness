@@ -220,6 +220,7 @@ const ITEMS=[
 ];
 const WT=['Day A - Lower','Day B - Upper','Day C - Full Body','Walk','Rest'];
 const DOSES=['2.5mg','5mg','7.5mg','10mg','12.5mg','15mg'];
+const SITES=['Left abdomen','Right abdomen','Left thigh','Right thigh','Left arm','Right arm'];
 const MEAL1_DEFAULT=[
   {name:'Elevation shake + 1 cup Fage 5% yogurt',pro:'48-53g'},
   {name:'3 eggs + 4oz smoked salmon + half avocado',pro:'38g'},
@@ -246,7 +247,7 @@ const MEAL2_DEFAULT=[
 
 let tab='today';
 let pendingDose='';
-let pendingPhoto='';
+let pendingSite='';
 
 // ---- STORAGE ----
 function fd(d){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),dy=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${dy}`}
@@ -271,7 +272,7 @@ function wtTotal(log){return(log.waterLog||[]).reduce((a,b)=>a+(b.oz||0),0)}
 
 // ---- ROUTING ----
 function go(t){
-  tab=t;pendingDose='';pendingPhoto='';
+  tab=t;pendingDose='';pendingSite='';
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
   document.getElementById('t-'+t).classList.add('on');
   render(true);
@@ -392,15 +393,7 @@ function weeklyHTML(){
     <div class="wl-field"><div class="wl-label">Date</div><input class="wl-input" id="wl-date" type="date" value="${doff(0)}"></div>
     <div class="wl-field"><div class="wl-label">Dosage</div><div class="dose-row">${dosePills}</div></div>
     <div class="wl-field"><div class="wl-label">Weight (lbs)</div><input class="wl-input" id="wl-weight" type="number" placeholder="e.g. 148.5" step="0.1"></div>
-    <div class="wl-field">
-      <div class="wl-label">Photo (optional)</div>
-      <label class="photo-btn" for="wl-photo">
-        <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <span id="photo-lbl">${pendingPhoto?'Photo selected':'Take or upload photo'}</span>
-      </label>
-      <input type="file" id="wl-photo" accept="image/*" style="display:none" onchange="handlePhoto(this)">
-      ${pendingPhoto?`<img id="photo-preview" class="photo-preview" src="${pendingPhoto}" style="display:block">`:''}
-    </div>
+    <div class="wl-field"><div class="wl-label">Injection site</div><div class="dose-row">${SITES.map(s=>`<button class="dpill spill${pendingSite===s?' on':''}" onclick="pickSite('${s}')">${s}</button>`).join('')}</div></div>
     <button class="wl-save" onclick="saveEntry()">Save Entry</button>
   </div>`;
 
@@ -411,18 +404,7 @@ function weeklyHTML(){
         const lost=sw?(sw-e.weight).toFixed(1):null;
         const lostStr=lost?(parseFloat(lost)>0?'-'+lost+' lbs':'0 lbs'):'';
         const dateStr=new Date(e.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-        return `<div class="wl-card">
-          ${e.photo?`<img class="wl-card-img" src="${e.photo}" alt="Weekly photo">`:''}
-          <div class="wl-card-body">
-            <div class="wl-card-date">${dateStr}</div>
-            <div class="wl-card-stats">
-              <div class="wl-card-stat"><div class="wl-card-val">${e.dosage||'--'}</div><div class="wl-card-lbl">Dosage</div></div>
-              <div class="wl-card-stat"><div class="wl-card-val">${e.weight} lbs</div><div class="wl-card-lbl">Weight</div></div>
-              ${lost?`<div class="wl-card-stat"><div class="wl-card-val green">${lostStr}</div><div class="wl-card-lbl">From start</div></div>`:''}
-              <button class="wl-card-del" onclick="delEntry(${i})">&#215;</button>
-            </div>
-          </div>
-        </div>`;
+        return `<div class="wl-card"><div class="wl-card-body"><div class="wl-card-date">${dateStr}</div><div class="wl-card-stats"><div class="wl-card-stat"><div class="wl-card-val">${e.dosage||'--'}</div><div class="wl-card-lbl">Dosage</div></div><div class="wl-card-stat"><div class="wl-card-val">${e.weight} lbs</div><div class="wl-card-lbl">Weight</div></div>${lost?`<div class="wl-card-stat"><div class="wl-card-val green">${lostStr}</div><div class="wl-card-lbl">From start</div></div>`:''} ${e.site?`<div class="wl-card-stat" style="min-width:90px"><div class="wl-card-val" style="font-size:13px;line-height:1.3">${e.site}</div><div class="wl-card-lbl">Injection site</div></div>`:''}<button class="wl-card-del" onclick="delEntry(${i})">&#215;</button></div></div></div>`;
       }).join('')}
     </div>`:'';
 
@@ -436,29 +418,8 @@ function setStartWeight(){
 }
 
 function pickDose(d){pendingDose=pendingDose===d?'':d;document.querySelectorAll('.dpill').forEach(b=>b.classList.toggle('on',b.textContent===pendingDose));}
+function pickSite(s){pendingSite=pendingSite===s?'':s;document.querySelectorAll('.spill').forEach(b=>b.classList.toggle('on',b.textContent===pendingSite));}
 
-function handlePhoto(input){
-  if(!input.files||!input.files[0])return;
-  const file=input.files[0];
-  const reader=new FileReader();
-  reader.onload=e=>{
-    const img=new Image();
-    img.onload=()=>{
-      const canvas=document.createElement('canvas');
-      const MAX=500;let w=img.width,h=img.height;
-      if(w>h){if(w>MAX){h=Math.round(h*MAX/w);w=MAX;}}else{if(h>MAX){w=Math.round(w*MAX/h);h=MAX;}}
-      canvas.width=w;canvas.height=h;
-      canvas.getContext('2d').drawImage(img,0,0,w,h);
-      pendingPhoto=canvas.toDataURL('image/jpeg',0.65);
-      const lbl=document.getElementById('photo-lbl');if(lbl)lbl.textContent='Photo ready';
-      const prev=document.getElementById('photo-preview');
-      if(prev){prev.src=pendingPhoto;prev.style.display='block';}
-      else{const img2=document.createElement('img');img2.id='photo-preview';img2.className='photo-preview';img2.src=pendingPhoto;img2.style.display='block';input.parentElement.appendChild(img2);}
-    };
-    img.src=e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
 
 function saveEntry(){
   const dateIn=document.getElementById('wl-date');
@@ -470,9 +431,9 @@ function saveEntry(){
   const w=loadWeekly();
   if(!w.entries)w.entries=[];
   const existing=w.entries.findIndex(e=>e.date===date);
-  const entry={date,dosage:pendingDose||'',weight,photo:pendingPhoto||''};
+  const entry={date,dosage:pendingDose||'',weight,site:pendingSite||''};
   if(existing>=0)w.entries[existing]=entry;else w.entries.push(entry);
-  saveWeekly(w);pendingDose='';pendingPhoto='';
+  saveWeekly(w);pendingDose='';pendingSite='';
   showToast('Entry saved');render(false);
 }
 
