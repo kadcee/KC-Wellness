@@ -15,6 +15,7 @@
 :root{
   --g:#1D9E75;--gl:#E1F5EE;--gd:#0F6E56;--gm:#5DCAA5;
   --b:#2980B9;--bl:#E8F4FD;--bd2:#1A6A9A;
+  --p:#7C5CBF;--pl:#F0EAFA;
   --bg:#F5F3EE;--card:#FFFFFF;
   --t:#1C1C1C;--t2:#6B6B6B;--t3:#ADADAD;--bd:#EAEAE8;
   --r:14px;--rs:9px;
@@ -63,8 +64,7 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .log-add{display:flex;gap:7px;margin-top:12px;align-items:center}
 .log-add-lbl{flex:1;min-width:0;height:38px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;color:var(--t);background:var(--bg);outline:none;padding:0 10px;transition:border-color .2s}
 .log-add-lbl:focus{border-color:var(--g)}
-.log-add-val{width:58px;height:38px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;color:var(--t);text-align:center;background:var(--bg);outline:none;-moz-appearance:textfield;transition:border-color .2s;flex-shrink:0}
-.log-add-val:focus{border-color:var(--g)}
+.log-add-val{width:58px;height:38px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;color:var(--t);text-align:center;background:var(--bg);outline:none;-moz-appearance:textfield;flex-shrink:0}
 .log-add-val::-webkit-outer-spin-button,.log-add-val::-webkit-inner-spin-button{-webkit-appearance:none}
 .log-add-btn{width:38px;height:38px;border-radius:var(--rs);border:none;background:var(--g);color:#fff;font-size:24px;font-weight:300;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;line-height:1;padding-bottom:1px}
 .log-add-btn:active{opacity:.82}.log-add-btn.blue{background:var(--b)}
@@ -83,17 +83,18 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .mg-header{padding:14px 16px 0}.mg-title{font-size:15px;font-weight:600;color:var(--t);margin-bottom:2px}.mg-sub{font-size:12px;color:var(--t3);margin-bottom:12px}
 .mg-row{display:flex;align-items:baseline;justify-content:space-between;padding:9px 16px;border-top:1px solid var(--bd)}
 .mg-tap{cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .12s}.mg-tap:active{background:var(--gl)}
+.mg-tap.blue-tap:active{background:var(--bl)}
 .mg-name{font-size:13px;color:var(--t);flex:1;padding-right:12px;line-height:1.4}.mg-pro{font-size:12px;font-weight:600;color:var(--gd);white-space:nowrap;flex-shrink:0}
+.mg-pro.blue{color:var(--bd2)}
 .mg-custom{border-top:1px solid var(--bd);padding:12px 16px}.mg-custom-lbl{font-size:10px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
 .mg-del{width:28px;height:28px;border:none;background:none;color:var(--t3);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:6px;padding:0;-webkit-tap-highlight-color:transparent;flex-shrink:0}
 .mg-del:active{background:var(--bd)}
 .mg-add{display:flex;gap:7px;margin-top:10px;align-items:center}
-.mg-add-lbl{flex:1;min-width:0;height:36px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:13px;color:var(--t);background:var(--bg);outline:none;padding:0 10px;transition:border-color .2s}
-.mg-add-lbl:focus{border-color:var(--g)}
+.mg-add-lbl{flex:1;min-width:0;height:36px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:13px;color:var(--t);background:var(--bg);outline:none;padding:0 10px}
 .mg-add-val{width:54px;height:36px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;color:var(--t);text-align:center;background:var(--bg);outline:none;-moz-appearance:textfield;flex-shrink:0}
 .mg-add-val::-webkit-outer-spin-button,.mg-add-val::-webkit-inner-spin-button{-webkit-appearance:none}
 .mg-add-btn{width:36px;height:36px;border-radius:var(--rs);border:none;background:var(--g);color:#fff;font-size:22px;font-weight:300;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;line-height:1;padding-bottom:1px}
-.mg-add-btn:active{opacity:.82}
+.mg-add-btn:active{opacity:.82}.mg-add-btn.blue{background:var(--b)}
 
 /* SUMMARY */
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
@@ -115,40 +116,27 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .wl-stat-l{font-size:10px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
 .wl-stat-v{font-size:26px;font-weight:600;color:var(--t);line-height:1;margin-bottom:3px}.wl-stat-s{font-size:11px;color:var(--t3)}
 .wl-stat-v.lost{color:var(--gd)}
-
 .wl-form{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
-.wl-field{margin-bottom:14px}
-.wl-field:last-child{margin-bottom:0}
+.wl-field{margin-bottom:14px}.wl-field:last-child{margin-bottom:0}
 .wl-label{font-size:11px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
-.wl-input{width:100%;height:40px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:15px;color:var(--t);background:var(--bg);outline:none;padding:0 12px;transition:border-color .2s}
-.wl-input:focus{border-color:var(--g)}
+.wl-input{width:100%;height:40px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:15px;color:var(--t);background:var(--bg);outline:none;padding:0 12px}
 .wl-input[type=number]{-moz-appearance:textfield}
 .wl-input[type=number]::-webkit-outer-spin-button,.wl-input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 .dose-row{display:flex;gap:6px;flex-wrap:wrap}
 .dpill{font-size:12px;font-weight:500;font-family:'Outfit',sans-serif;padding:6px 12px;border-radius:20px;border:1.5px solid var(--bd);background:var(--bg);color:var(--t2);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all .15s}
 .dpill.on{border-color:var(--g);background:var(--gl);color:var(--gd)}
-
-.photo-btn{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1.5px dashed var(--bd);border-radius:var(--rs);cursor:pointer;-webkit-tap-highlight-color:transparent;background:var(--bg);width:100%}
-.photo-btn svg{width:20px;height:20px;stroke:var(--t3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.photo-btn span{font-size:14px;color:var(--t2)}
-.photo-preview{width:100%;height:140px;object-fit:cover;border-radius:var(--rs);margin-top:8px;display:none}
-
 .wl-save{width:100%;height:44px;border-radius:var(--rs);border:none;background:var(--g);color:#fff;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:6px;-webkit-tap-highlight-color:transparent}
 .wl-save:active{opacity:.85}
-
 .wl-entries{display:flex;flex-direction:column;gap:8px}
 .wl-card{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
-.wl-card-img{width:100%;height:130px;object-fit:cover;display:block}
 .wl-card-body{padding:12px 14px}
 .wl-card-date{font-size:11px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-.wl-card-stats{display:flex;gap:16px;align-items:baseline}
+.wl-card-stats{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
 .wl-card-stat{display:flex;flex-direction:column;gap:1px}
-.wl-card-val{font-size:18px;font-weight:600;color:var(--t);line-height:1}
-.wl-card-val.green{color:var(--gd)}
+.wl-card-val{font-size:18px;font-weight:600;color:var(--t);line-height:1}.wl-card-val.green{color:var(--gd)}
 .wl-card-lbl{font-size:11px;color:var(--t3)}
 .wl-card-del{margin-left:auto;width:28px;height:28px;border:none;background:none;color:var(--t3);font-size:18px;cursor:pointer;border-radius:6px;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
 .wl-card-del:active{background:var(--bd)}
-
 .wl-setup{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .wl-setup-row{display:flex;gap:8px;align-items:flex-end}
 .wl-setup-row .wl-input{flex:1}
@@ -156,21 +144,46 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .wl-setup-btn:active{opacity:.85}
 .wl-divider{font-size:11px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin:14px 0 8px}
 
+/* HAIR TAB */
+.hair-today{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
+.hair-today-day{font-size:13px;font-weight:600;color:var(--p);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+.hair-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--bd);cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+.hair-item:last-child{border-bottom:none;padding-bottom:0}
+.hair-item:first-child{padding-top:0}
+.hcb{width:22px;height:22px;border-radius:6px;border:2px solid var(--bd);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s cubic-bezier(.4,0,.2,1);background:var(--bg);margin-top:1px}
+.hcb.on{background:var(--p);border-color:var(--p)}
+.hcb svg{width:12px;height:12px;stroke:#fff;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.4);transition:all .2s cubic-bezier(.34,1.56,.64,1)}
+.hcb.on svg{opacity:1;transform:scale(1)}
+.hair-item-text{}
+.hair-item-name{font-size:14px;color:var(--t);line-height:1.3}
+.hair-item-note{font-size:12px;color:var(--t3);margin-top:2px;line-height:1.4}
+.hair-item.done .hair-item-name{color:var(--t3);text-decoration:line-through;text-decoration-color:var(--p)}
+
+.hair-sched{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
+.hair-sched-hdr{padding:14px 16px 0}
+.hair-sched-title{font-size:15px;font-weight:600;color:var(--t);margin-bottom:12px}
+.hair-sched-row{padding:10px 16px;border-top:1px solid var(--bd);display:flex;gap:12px}
+.hair-sched-day{font-size:12px;font-weight:600;color:var(--t);min-width:32px}
+.hair-sched-tasks{font-size:13px;color:var(--t2);line-height:1.5;flex:1}
+.hair-sched-row.today-row{background:var(--pl)}
+.hair-sched-row.today-row .hair-sched-day{color:var(--p)}
+
 /* TABS */
 .tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid var(--bd);display:flex;padding:6px 2px calc(6px + var(--sb));z-index:100}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 2px;border:none;background:none;cursor:pointer;border-radius:var(--rs);-webkit-tap-highlight-color:transparent}
 .tab:active{background:var(--gl)}
 .tic{width:20px;height:20px;stroke:var(--t3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .15s}
 .tab.on .tic{stroke:var(--g)}
+.tab.hair-tab.on .tic{stroke:var(--p)}
 .tlbl{font-family:'Outfit',sans-serif;font-size:9px;font-weight:500;color:var(--t3);transition:color .15s}
 .tab.on .tlbl{color:var(--g)}
+.tab.hair-tab.on .tlbl{color:var(--p)}
 
 @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .ani{animation:fadein .18s ease}
 </style>
 </head>
 <body>
-
 <header>
   <div class="hd" id="hdate"></div>
   <div class="ht">KC's Wellness Tracker</div>
@@ -181,14 +194,6 @@ main{padding:14px 14px calc(76px + var(--sb))}
   <button class="tab on" id="t-today" onclick="go('today')">
     <svg class="tic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
     <span class="tlbl">Today</span>
-  </button>
-  <button class="tab" id="t-yesterday" onclick="go('yesterday')">
-    <svg class="tic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
-    <span class="tlbl">Yest</span>
-  </button>
-  <button class="tab" id="t-week" onclick="go('week')">
-    <svg class="tic" viewBox="0 0 24 24"><path d="M4 20V10M8 20V4M12 20v-6M16 20V8M20 20v-4"/></svg>
-    <span class="tlbl">Week</span>
   </button>
   <button class="tab" id="t-month" onclick="go('month')">
     <svg class="tic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h8M8 18h5"/></svg>
@@ -202,25 +207,29 @@ main{padding:14px 14px calc(76px + var(--sb))}
     <svg class="tic" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 5-5 13-5 13S7 12 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/></svg>
     <span class="tlbl">Log</span>
   </button>
+  <button class="tab hair-tab" id="t-hair" onclick="go('hair')">
+    <svg class="tic" viewBox="0 0 24 24"><path d="M12 22c-4 0-7-2-7-6 0-3 2-5 4-7 1-1 2-2 2-3s-1-2-1-3c0-2 1-3 2-3s2 1 2 3c0 1-1 2-1 3 0 1 1 2 2 3 2 2 4 4 4 7 0 4-3 6-7 6z"/></svg>
+    <span class="tlbl">Hair</span>
+  </button>
 </nav>
 
 <script>
 const ITEMS=[
-  {id:'electrolyte',name:'Electrolyte stick',time:'6:50 AM'},
-  {id:'clothes',name:'Workout clothes on at 9:45 AM',time:'9:45 AM'},
+  {id:'electrolyte_creatine',name:'Electrolyte + Creatine',time:'6:50 AM'},
   {id:'workout',name:'Workout done',time:'9:45 AM',sub:'workout'},
   {id:'meal1',name:'Meal 1 (shake + yogurt)',time:'10:30 AM'},
   {id:'supplements',name:'Supplements',time:'10:30 AM'},
-  {id:'creatine',name:'Creatine 5g',time:'10-11 AM'},
   {id:'snack',name:'Snack',time:'1-2 PM'},
   {id:'meal2',name:'Meal 2 / Dinner',time:'5-6 PM'},
   {id:'protein',name:'Protein 125g+',time:'All day'},
   {id:'water',name:'Water 80 oz',time:'All day'},
   {id:'magnesium',name:'Magnesium',time:'Before bed'},
 ];
+
 const WT=['Day A - Lower','Day B - Upper','Day C - Full Body','Walk','Vibration Plate','Mobility','Rest'];
 const DOSES=['2.5mg','5mg','7.5mg','10mg','12.5mg','15mg'];
 const SITES=['Left abdomen','Right abdomen','Left thigh','Right thigh','Left arm','Right arm'];
+
 const MEAL1_DEFAULT=[
   {name:'Elevation shake + 1 cup Fage 5% yogurt',pro:'48-53g'},
   {name:'3 eggs + 4oz smoked salmon + half avocado',pro:'38g'},
@@ -244,6 +253,32 @@ const MEAL2_DEFAULT=[
   {name:'6oz shrimp stir fry + snap peas + half cup rice',pro:'38g'},
   {name:'5oz pork tenderloin + sweet potato + green beans',pro:'38g'},
 ];
+const WATER_PRESETS=[
+  {name:'Coffee',oz:10},
+  {name:'Electrolyte drink',oz:16},
+  {name:'Water',oz:8},
+  {name:'Water',oz:32},
+];
+
+const HAIR_SCHEDULE={
+  0:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
+  1:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
+  2:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
+  3:[
+    {id:'rosemary',name:'Rosemary oil',note:'Apply a few hours before shower or overnight'},
+    {id:'shampoo',name:'Shampoo',note:''},
+    {id:'minoxidil',name:'Minoxidil',note:'Apply once hair and scalp are completely dry'},
+  ],
+  4:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
+  5:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
+  6:[
+    {id:'rosemary',name:'Rosemary oil',note:''},
+    {id:'shampoo',name:'Shampoo',note:''},
+    {id:'minoxidil',name:'Minoxidil',note:'Apply after scalp is dry'},
+  ],
+};
+const DAY_NAMES=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const DAY_SHORT=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
 let tab='today';
 let pendingDose='';
@@ -263,10 +298,12 @@ function load(date){
   }catch{return empty()}
 }
 function save(date,log){try{localStorage.setItem('wt_'+date,JSON.stringify(log))}catch{}}
-function loadMeals(){try{const r=localStorage.getItem('wt_meals');return r?JSON.parse(r):{meal1:[],snack:[],meal2:[]}}catch{return{meal1:[],snack:[],meal2:[]}}}
+function loadMeals(){try{const r=localStorage.getItem('wt_meals');return r?JSON.parse(r):{meal1:[],snack:[],meal2:[],water:[]}}catch{return{meal1:[],snack:[],meal2:[],water:[]}}}
 function saveMeals(m){try{localStorage.setItem('wt_meals',JSON.stringify(m))}catch{}}
 function loadWeekly(){try{const r=localStorage.getItem('wt_weekly');return r?JSON.parse(r):{startWeight:null,startDate:null,entries:[]}}catch{return{startWeight:null,startDate:null,entries:[]}}}
 function saveWeekly(w){try{localStorage.setItem('wt_weekly',JSON.stringify(w))}catch{}}
+function loadHair(date){try{const r=localStorage.getItem('wt_hair_'+date);return r?JSON.parse(r):{}}catch{return{}}}
+function saveHair(date,data){try{localStorage.setItem('wt_hair_'+date,JSON.stringify(data))}catch{}}
 function ptTotal(log){return(log.proteinLog||[]).reduce((a,b)=>a+(b.grams||0),0)}
 function wtTotal(log){return(log.waterLog||[]).reduce((a,b)=>a+(b.oz||0),0)}
 
@@ -281,11 +318,10 @@ function render(anim){
   const m=document.getElementById('main');
   if(anim){m.classList.remove('ani');void m.offsetWidth;m.classList.add('ani')}
   if(tab==='today')m.innerHTML=dayHTML(doff(0));
-  else if(tab==='yesterday')m.innerHTML=dayHTML(doff(1));
-  else if(tab==='week')m.innerHTML=sumHTML(dates(7),'Last 7 days',false);
   else if(tab==='month')m.innerHTML=sumHTML(dates(30),'Last 30 days',true);
   else if(tab==='meals')m.innerHTML=mealsHTML();
-  else m.innerHTML=weeklyHTML();
+  else if(tab==='log')m.innerHTML=weeklyHTML();
+  else m.innerHTML=hairHTML();
 }
 
 // ---- DAY VIEW ----
@@ -338,6 +374,13 @@ function addMealToLog(name,pro){
   log.items.protein=ptTotal(log)>=125;
   save(date,log);showToast('+'+grams+'g added to today');
 }
+function addWaterPreset(label,oz){
+  const date=doff(0);const log=load(date);
+  if(!log.waterLog)log.waterLog=[];
+  log.waterLog.push({label,oz});
+  log.items.water=wtTotal(log)>=80;
+  save(date,log);showToast('+'+oz+'oz added to today');
+}
 function showToast(msg){
   let t=document.getElementById('toast');
   if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:fixed;bottom:calc(76px + env(safe-area-inset-bottom,0px) + 12px);left:50%;transform:translateX(-50%);background:#1C1C1C;color:#fff;font-family:Outfit,sans-serif;font-size:13px;font-weight:500;padding:9px 18px;border-radius:20px;z-index:200;pointer-events:none;transition:opacity .25s';document.body.appendChild(t);}
@@ -345,13 +388,19 @@ function showToast(msg){
 }
 function mealsHTML(){
   const cm=loadMeals();
-  function section(key,defaults,title,sub,inputPrefix){
+  function mealSection(key,defaults,title,sub,inputPrefix){
     const custom=cm[key]||[];
     const defRows=defaults.map(o=>{const n=o.name.replace(/'/g,"\\'");return `<div class="mg-row mg-tap" onclick="addMealToLog('${n}','${o.pro}')"><span class="mg-name">${o.name}</span><span class="mg-pro">${o.pro}</span></div>`;}).join('');
     const custRows=custom.map((o,i)=>{const n=o.name.replace(/'/g,"\\'");return `<div class="mg-row mg-tap" onclick="addMealToLog('${n}',${o.pro})"><span class="mg-name">${o.name}</span><span class="mg-pro">${o.pro}g</span><button class="mg-del" onclick="event.stopPropagation();delMeal('${key}',${i})">&#215;</button></div>`;}).join('');
-    return `<div class="mg-section"><div class="mg-header"><div class="mg-title">${title}</div><div class="mg-sub">${sub} &nbsp;·&nbsp; Tap to add to today</div></div>${defRows}${custom.length?custRows:''}<div class="mg-custom"><div class="mg-custom-lbl">Add your own</div><div class="mg-add"><input class="mg-add-lbl" id="mn-${inputPrefix}" type="text" placeholder="Meal description" maxlength="60"><input class="mg-add-val" id="mg-${inputPrefix}" type="number" placeholder="g" min="0" max="999" onkeydown="if(event.key==='Enter')addMeal('${key}','${inputPrefix}')"><button class="mg-add-btn" onclick="addMeal('${key}','${inputPrefix}')">+</button></div></div></div>`;
+    return `<div class="mg-section"><div class="mg-header"><div class="mg-title">${title}</div><div class="mg-sub">${sub} &nbsp;·&nbsp; Tap to add to today</div></div>${defRows}${custRows}<div class="mg-custom"><div class="mg-custom-lbl">Add your own</div><div class="mg-add"><input class="mg-add-lbl" id="mn-${inputPrefix}" type="text" placeholder="Meal description" maxlength="60"><input class="mg-add-val" id="mg-${inputPrefix}" type="number" placeholder="g" min="0" max="999" onkeydown="if(event.key==='Enter')addMeal('${key}','${inputPrefix}')"><button class="mg-add-btn" onclick="addMeal('${key}','${inputPrefix}')">+</button></div></div></div>`;
   }
-  return `${section('meal1',MEAL1_DEFAULT,'Meal 1','10:30 AM  |  35-40g protein','m1')}${section('snack',SNACK_DEFAULT,'Snack','1-2 PM  |  20-30g protein','sn')}${section('meal2',MEAL2_DEFAULT,'Meal 2 / Dinner','5-6 PM  |  40-45g protein','m2')}`;
+  function waterSection(){
+    const customW=cm.water||[];
+    const presetRows=WATER_PRESETS.map(w=>`<div class="mg-row mg-tap blue-tap" onclick="addWaterPreset('${w.name}',${w.oz})"><span class="mg-name">${w.name}</span><span class="mg-pro blue">${w.oz} oz</span></div>`).join('');
+    const custRows=customW.map((o,i)=>`<div class="mg-row mg-tap blue-tap" onclick="addWaterPreset('${o.name.replace(/'/g,"\\'")}',${o.oz})"><span class="mg-name">${o.name}</span><span class="mg-pro blue">${o.oz} oz</span><button class="mg-del" onclick="event.stopPropagation();delMeal('water',${i})">&#215;</button></div>`).join('');
+    return `<div class="mg-section"><div class="mg-header"><div class="mg-title">Water</div><div class="mg-sub">Tap to add to today's water log</div></div>${presetRows}${custRows}<div class="mg-custom"><div class="mg-custom-lbl">Add your own</div><div class="mg-add"><input class="mg-add-lbl" id="mn-water" type="text" placeholder="e.g. Tea, Sparkling water" maxlength="40"><input class="mg-add-val" id="mg-water" type="number" placeholder="oz" min="0" max="999" onkeydown="if(event.key==='Enter')addWaterMeal()"><button class="mg-add-btn blue" onclick="addWaterMeal()">+</button></div></div></div>`;
+  }
+  return `${mealSection('meal1',MEAL1_DEFAULT,'Meal 1','10:30 AM  |  35-40g protein','m1')}${mealSection('snack',SNACK_DEFAULT,'Snack','1-2 PM  |  20-30g protein','sn')}${mealSection('meal2',MEAL2_DEFAULT,'Meal 2 / Dinner','5-6 PM  |  40-45g protein','m2')}${waterSection()}`;
 }
 function addMeal(key,prefix){
   const nameIn=document.getElementById('mn-'+prefix);const gIn=document.getElementById('mg-'+prefix);
@@ -360,7 +409,52 @@ function addMeal(key,prefix){
   const cm=loadMeals();if(!cm[key])cm[key]=[];cm[key].push({name,pro:g});
   saveMeals(cm);nameIn.value='';gIn.value='';render(false);
 }
+function addWaterMeal(){
+  const nameIn=document.getElementById('mn-water');const ozIn=document.getElementById('mg-water');
+  const name=nameIn.value.trim();const oz=parseInt(ozIn.value||0);
+  if(!name||!oz||oz<=0){if(!name)nameIn.focus();else ozIn.focus();return}
+  const cm=loadMeals();if(!cm.water)cm.water=[];cm.water.push({name,oz});
+  saveMeals(cm);nameIn.value='';ozIn.value='';render(false);
+}
 function delMeal(key,idx){const cm=loadMeals();if(!cm[key])return;cm[key].splice(idx,1);saveMeals(cm);render(false);}
+
+// ---- HAIR ----
+function hairHTML(){
+  const today=new Date();
+  const dow=today.getDay();
+  const dateStr=doff(0);
+  const tasks=HAIR_SCHEDULE[dow]||[];
+  const hairLog=loadHair(dateStr);
+  const allDone=tasks.length>0&&tasks.every(t=>hairLog[t.id]);
+
+  const taskItems=tasks.map(t=>{
+    const done=!!hairLog[t.id];
+    return `<div class="hair-item${done?' done':''}" onclick="toggleHair('${dateStr}','${t.id}')"><div class="hcb${done?' on':''}"><svg viewBox="0 0 13 13"><polyline points="1.5,6.5 5,10 11.5,3"/></svg></div><div class="hair-item-text"><div class="hair-item-name">${t.name}</div>${t.note?`<div class="hair-item-note">${t.note}</div>`:''}</div></div>`;
+  }).join('');
+
+  const weekRows=DAY_NAMES.map((day,i)=>{
+    const isToday=i===dow;
+    const sched=HAIR_SCHEDULE[i]||[];
+    const taskText=sched.map(t=>t.name+(t.note?` (${t.note})`:'.')).join(' · ');
+    return `<div class="hair-sched-row${isToday?' today-row':''}"><div class="hair-sched-day">${DAY_SHORT[i]}</div><div class="hair-sched-tasks">${taskText}</div></div>`;
+  }).join('');
+
+  return `
+    <div class="hair-today">
+      <div class="hair-today-day">${DAY_NAMES[dow]} ${allDone?'&#10003;':''}</div>
+      ${tasks.length?taskItems:'<div style="font-size:13px;color:var(--t3)">Nothing scheduled today.</div>'}
+    </div>
+    <div class="hair-sched">
+      <div class="hair-sched-hdr"><div class="hair-sched-title">Weekly schedule</div></div>
+      ${weekRows}
+    </div>`;
+}
+function toggleHair(date,id){
+  const data=loadHair(date);
+  data[id]=!data[id];
+  saveHair(date,data);
+  render(false);
+}
 
 // ---- WEEKLY LOG ----
 function weeklyHTML(){
@@ -369,82 +463,28 @@ function weeklyHTML(){
   const sw=w.startWeight;
   const latest=entries.length?entries[0].weight:null;
   const totalLost=sw&&latest?(sw-latest).toFixed(1):null;
-
-  const statsHTML=sw?`
-    <div class="wl-stat-row">
-      <div class="wl-stat"><div class="wl-stat-l">Start weight</div><div class="wl-stat-v">${sw}</div><div class="wl-stat-s">lbs</div></div>
-      <div class="wl-stat"><div class="wl-stat-l">Total lost</div><div class="wl-stat-v lost">${totalLost!==null?(parseFloat(totalLost)>0?'-'+totalLost:'0'):'--'}</div><div class="wl-stat-s">lbs</div></div>
-      ${latest?`<div class="wl-stat"><div class="wl-stat-l">Current</div><div class="wl-stat-v">${latest}</div><div class="wl-stat-s">lbs</div></div>`:''}
-      <div class="wl-stat"><div class="wl-stat-l">Entries</div><div class="wl-stat-v">${entries.length}</div><div class="wl-stat-s">weeks logged</div></div>
-    </div>`:'';
-
-  const setupHTML=`<div class="wl-setup">
-    <div class="slbl">Starting weight</div>
-    <div class="wl-setup-row">
-      <input class="wl-input" id="sw-input" type="number" placeholder="e.g. 155" value="${sw||''}" step="0.1">
-      <button class="wl-setup-btn" onclick="setStartWeight()">Save</button>
-    </div>
-  </div>`;
-
+  const statsHTML=sw?`<div class="wl-stat-row"><div class="wl-stat"><div class="wl-stat-l">Start weight</div><div class="wl-stat-v">${sw}</div><div class="wl-stat-s">lbs</div></div><div class="wl-stat"><div class="wl-stat-l">Total lost</div><div class="wl-stat-v lost">${totalLost!==null?(parseFloat(totalLost)>0?'-'+totalLost:'0'):'--'}</div><div class="wl-stat-s">lbs</div></div>${latest?`<div class="wl-stat"><div class="wl-stat-l">Current</div><div class="wl-stat-v">${latest}</div><div class="wl-stat-s">lbs</div></div>`:''}<div class="wl-stat"><div class="wl-stat-l">Entries</div><div class="wl-stat-v">${entries.length}</div><div class="wl-stat-s">weeks logged</div></div></div>`:'';
+  const setupHTML=`<div class="wl-setup"><div class="slbl">Starting weight</div><div class="wl-setup-row"><input class="wl-input" id="sw-input" type="number" placeholder="e.g. 155" value="${sw||''}" step="0.1"><button class="wl-setup-btn" onclick="setStartWeight()">Save</button></div></div>`;
   const dosePills=DOSES.map(d=>`<button class="dpill${pendingDose===d?' on':''}" onclick="pickDose('${d}')">${d}</button>`).join('');
-
-  const formHTML=`<div class="wl-form">
-    <div class="slbl">Add weekly entry</div>
-    <div class="wl-field"><div class="wl-label">Date</div><input class="wl-input" id="wl-date" type="date" value="${doff(0)}"></div>
-    <div class="wl-field"><div class="wl-label">Dosage</div><div class="dose-row">${dosePills}</div></div>
-    <div class="wl-field"><div class="wl-label">Weight (lbs)</div><input class="wl-input" id="wl-weight" type="number" placeholder="e.g. 148.5" step="0.1"></div>
-    <div class="wl-field"><div class="wl-label">Injection site</div><div class="dose-row">${SITES.map(s=>`<button class="dpill spill${pendingSite===s?' on':''}" onclick="pickSite('${s}')">${s}</button>`).join('')}</div></div>
-    <button class="wl-save" onclick="saveEntry()">Save Entry</button>
-  </div>`;
-
-  const historyHTML=entries.length?`
-    <div class="wl-divider">History</div>
-    <div class="wl-entries">
-      ${entries.map((e,i)=>{
-        const lost=sw?(sw-e.weight).toFixed(1):null;
-        const lostStr=lost?(parseFloat(lost)>0?'-'+lost+' lbs':'0 lbs'):'';
-        const dateStr=new Date(e.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-        return `<div class="wl-card"><div class="wl-card-body"><div class="wl-card-date">${dateStr}</div><div class="wl-card-stats"><div class="wl-card-stat"><div class="wl-card-val">${e.dosage||'--'}</div><div class="wl-card-lbl">Dosage</div></div><div class="wl-card-stat"><div class="wl-card-val">${e.weight} lbs</div><div class="wl-card-lbl">Weight</div></div>${lost?`<div class="wl-card-stat"><div class="wl-card-val green">${lostStr}</div><div class="wl-card-lbl">From start</div></div>`:''} ${e.site?`<div class="wl-card-stat" style="min-width:90px"><div class="wl-card-val" style="font-size:13px;line-height:1.3">${e.site}</div><div class="wl-card-lbl">Injection site</div></div>`:''}<button class="wl-card-del" onclick="delEntry(${i})">&#215;</button></div></div></div>`;
-      }).join('')}
-    </div>`:'';
-
+  const sitePills=SITES.map(s=>`<button class="dpill spill${pendingSite===s?' on':''}" onclick="pickSite('${s}')">${s}</button>`).join('');
+  const formHTML=`<div class="wl-form"><div class="slbl">Add weekly entry</div><div class="wl-field"><div class="wl-label">Date</div><input class="wl-input" id="wl-date" type="date" value="${doff(0)}"></div><div class="wl-field"><div class="wl-label">Dosage</div><div class="dose-row">${dosePills}</div></div><div class="wl-field"><div class="wl-label">Weight (lbs)</div><input class="wl-input" id="wl-weight" type="number" placeholder="e.g. 148.5" step="0.1"></div><div class="wl-field"><div class="wl-label">Injection site</div><div class="dose-row">${sitePills}</div></div><button class="wl-save" onclick="saveEntry()">Save Entry</button></div>`;
+  const historyHTML=entries.length?`<div class="wl-divider">History</div><div class="wl-entries">${entries.map((e,i)=>{const lost=sw?(sw-e.weight).toFixed(1):null;const lostStr=lost?(parseFloat(lost)>0?'-'+lost+' lbs':'0 lbs'):'';const dateStr=new Date(e.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});return `<div class="wl-card"><div class="wl-card-body"><div class="wl-card-date">${dateStr}</div><div class="wl-card-stats"><div class="wl-card-stat"><div class="wl-card-val">${e.dosage||'--'}</div><div class="wl-card-lbl">Dosage</div></div><div class="wl-card-stat"><div class="wl-card-val">${e.weight} lbs</div><div class="wl-card-lbl">Weight</div></div>${lost?`<div class="wl-card-stat"><div class="wl-card-val green">${lostStr}</div><div class="wl-card-lbl">From start</div></div>`:''} ${e.site?`<div class="wl-card-stat" style="min-width:90px"><div class="wl-card-val" style="font-size:13px;line-height:1.3">${e.site}</div><div class="wl-card-lbl">Injection site</div></div>`:''}<button class="wl-card-del" onclick="delEntry(${i})">&#215;</button></div></div></div>`;}).join('')}</div>`:'';
   return `${statsHTML}${setupHTML}${formHTML}${historyHTML}`;
 }
-
-function setStartWeight(){
-  const v=parseFloat(document.getElementById('sw-input').value);
-  if(!v||v<=0)return;
-  const w=loadWeekly();w.startWeight=v;saveWeekly(w);showToast('Starting weight saved');render(false);
-}
-
-function pickDose(d){pendingDose=pendingDose===d?'':d;document.querySelectorAll('.dpill').forEach(b=>b.classList.toggle('on',b.textContent===pendingDose));}
+function setStartWeight(){const v=parseFloat(document.getElementById('sw-input').value);if(!v||v<=0)return;const w=loadWeekly();w.startWeight=v;saveWeekly(w);showToast('Starting weight saved');render(false);}
+function pickDose(d){pendingDose=pendingDose===d?'':d;document.querySelectorAll('.dpill:not(.spill)').forEach(b=>b.classList.toggle('on',b.textContent===pendingDose));}
 function pickSite(s){pendingSite=pendingSite===s?'':s;document.querySelectorAll('.spill').forEach(b=>b.classList.toggle('on',b.textContent===pendingSite));}
-
-
 function saveEntry(){
-  const dateIn=document.getElementById('wl-date');
-  const weightIn=document.getElementById('wl-weight');
-  const date=dateIn?dateIn.value:'';
-  const weight=parseFloat(weightIn?weightIn.value:'');
-  if(!date){showToast('Pick a date');return;}
-  if(!weight||weight<=0){showToast('Enter your weight');return;}
-  const w=loadWeekly();
-  if(!w.entries)w.entries=[];
+  const dateIn=document.getElementById('wl-date');const weightIn=document.getElementById('wl-weight');
+  const date=dateIn?dateIn.value:'';const weight=parseFloat(weightIn?weightIn.value:'');
+  if(!date){showToast('Pick a date');return;}if(!weight||weight<=0){showToast('Enter your weight');return;}
+  const w=loadWeekly();if(!w.entries)w.entries=[];
   const existing=w.entries.findIndex(e=>e.date===date);
   const entry={date,dosage:pendingDose||'',weight,site:pendingSite||''};
   if(existing>=0)w.entries[existing]=entry;else w.entries.push(entry);
-  saveWeekly(w);pendingDose='';pendingSite='';
-  showToast('Entry saved');render(false);
+  saveWeekly(w);pendingDose='';pendingSite='';showToast('Entry saved');render(false);
 }
-
-function delEntry(sortedIdx){
-  const w=loadWeekly();
-  const entries=[...(w.entries||[])].sort((a,b)=>b.date.localeCompare(a.date));
-  const target=entries[sortedIdx];
-  if(!target)return;
-  w.entries=w.entries.filter(e=>e.date!==target.date);
-  saveWeekly(w);render(false);
-}
+function delEntry(sortedIdx){const w=loadWeekly();const entries=[...(w.entries||[])].sort((a,b)=>b.date.localeCompare(a.date));const target=entries[sortedIdx];if(!target)return;w.entries=w.entries.filter(e=>e.date!==target.date);saveWeekly(w);render(false);}
 
 // ---- DAILY INTERACTIONS ----
 function addPR(date){
@@ -474,13 +514,10 @@ function setWT(e,date,type){
   e.stopPropagation();const log=load(date);log.workoutType=log.workoutType===type?'':type;save(date,log);
   e.target.closest('.sub').querySelectorAll('.pill').forEach(p=>p.classList.toggle('on',p.textContent===log.workoutType));
 }
-function setE(date,n){
-  const log=load(date);log.energy=log.energy===n?0:n;save(date,log);
-  document.querySelectorAll('.ebtn').forEach((b,i)=>b.classList.toggle('on',i+1===log.energy));
-}
+function setE(date,n){const log=load(date);log.energy=log.energy===n?0:n;save(date,log);document.querySelectorAll('.ebtn').forEach((b,i)=>b.classList.toggle('on',i+1===log.energy));}
 function setN(date,val){const log=load(date);log.notes=val;save(date,log);}
 
-
+// ---- SUMMARY + WEIGHT CHART ----
 function weightChartHTML(){
   const w=loadWeekly();
   const all=[...(w.entries||[])].sort((a,b)=>a.date.localeCompare(b.date));
@@ -490,8 +527,7 @@ function weightChartHTML(){
   const plotW=W-PL-PR,plotH=H-PT-PB;
   const weights=all.map(e=>e.weight);
   const allVals=sw?[...weights,sw]:weights;
-  const minW=Math.min(...allVals)-2;
-  const maxW=Math.max(...allVals)+2;
+  const minW=Math.min(...allVals)-2;const maxW=Math.max(...allVals)+2;
   const range=maxW-minW||1;
   const toX=i=>PL+(i/(Math.max(all.length-1,1)))*plotW;
   const toY=v=>PT+plotH-((v-minW)/range)*plotH;
@@ -500,11 +536,7 @@ function weightChartHTML(){
   const line='<polyline points="'+pts+'" fill="none" stroke="#1D9E75" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
   const dots=all.map((e,i)=>'<circle cx="'+toX(i)+'" cy="'+toY(e.weight)+'" r="4" fill="#1D9E75"/><circle cx="'+toX(i)+'" cy="'+toY(e.weight)+'" r="2" fill="#fff"/>').join('');
   const step=all.length>7?Math.ceil(all.length/5):1;
-  const xLbls=all.map((e,i)=>{
-    if(i%step!==0&&i!==all.length-1)return '';
-    const d=new Date(e.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
-    return '<text x="'+toX(i)+'" y="'+(H-6)+'" text-anchor="middle" font-size="9" fill="#ADADAD" font-family="Outfit,sans-serif">'+d+'</text>';
-  }).join('');
+  const xLbls=all.map((e,i)=>{if(i%step!==0&&i!==all.length-1)return '';const d=new Date(e.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});return '<text x="'+toX(i)+'" y="'+(H-6)+'" text-anchor="middle" font-size="9" fill="#ADADAD" font-family="Outfit,sans-serif">'+d+'</text>';}).join('');
   const yVals=[minW+2,minW+(maxW-minW)/2,maxW-2];
   const yLbls=yVals.map(v=>'<text x="'+(PL-5)+'" y="'+(toY(v)+4)+'" text-anchor="end" font-size="9" fill="#ADADAD" font-family="Outfit,sans-serif">'+Math.round(v)+'</text>').join('');
   const swLine=sw?'<line x1="'+PL+'" y1="'+toY(sw)+'" x2="'+(W-PR)+'" y2="'+toY(sw)+'" stroke="#EAEAE8" stroke-width="1.5" stroke-dasharray="4,3"/><text x="'+(PL+4)+'" y="'+(toY(sw)-4)+'" font-size="9" fill="#ADADAD" font-family="Outfit,sans-serif">start</text>':'';
@@ -513,13 +545,11 @@ function weightChartHTML(){
   const lostBadge=(lost&&parseFloat(lost)>0)?'<div style="margin-top:10px;display:flex;gap:8px;align-items:center"><span style="font-size:22px;font-weight:600;color:#0F6E56">-'+lost+'</span><span style="font-size:13px;color:#6B6B6B"> lbs lost since you started</span></div>':'';
   return '<div class="cc"><div class="slbl">Weight progress</div><svg width="100%" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1D9E75"/><stop offset="100%" stop-color="#1D9E75" stop-opacity="0"/></linearGradient></defs>'+swLine+area+line+dots+yLbls+xLbls+'</svg>'+lostBadge+'</div>';
 }
-
-// ---- SUMMARY ----
 function sumHTML(ds,label,showWeight){
   const logs=ds.map(d=>load(d));
   const wo=logs.filter(l=>l.items.workout).length;
   const pr=logs.filter(l=>ptTotal(l)>=125||l.items.protein).length;
-  const su=logs.filter(l=>l.items.creatine||l.items.supplements).length;
+  const su=logs.filter(l=>l.items.electrolyte_creatine||l.items.supplements).length;
   const ev=logs.map(l=>l.energy).filter(e=>e>0);
   const ae=ev.length?(ev.reduce((a,b)=>a+b,0)/ev.length).toFixed(1):'--';
   const cards=[{l:'Workouts',v:wo,s:`of ${ds.length} days`},{l:'Protein 125g+',v:pr,s:'days hit'},{l:'Supps days',v:su,s:'creatine or stack'},{l:'Avg energy',v:ae,s:'out of 5'}].map(c=>`<div class="sc"><div class="sc-l">${c.l}</div><div class="sc-v">${c.v}</div><div class="sc-s">${c.s}</div></div>`).join('');
@@ -528,7 +558,7 @@ function sumHTML(ds,label,showWeight){
   const types={};logs.forEach(l=>{if(l.workoutType&&l.workoutType!=='Rest')types[l.workoutType]=(types[l.workoutType]||0)+1});
   const twrows=Object.entries(types).sort((a,b)=>b[1]-a[1]).map(([t,c])=>{const w=wo>0?Math.round(c/wo*100):0;return `<div class="wr"><span class="wn">${t}</span><div class="wtr"><div class="wf" style="width:${w}%"></div></div><span class="wct">${c}</span></div>`;}).join('');
   const wChart=showWeight?weightChartHTML():'';
-  return `<div style="margin-bottom:10px"><div class="slbl">${label}</div></div><div class="sgrid">${cards}</div><div class="cc"><div class="slbl">Daily completion</div><div class="bars">${bars}</div><div class="bar-lbls">${lbls}</div></div>${twrows?`<div class="wc"><div class="slbl" style="margin-bottom:12px">Workout breakdown</div>${twrows}</div>`:''}${wChart}`;
+  return `<div style="margin-bottom:10px"><div class="slbl">${label}</div></div><div class="sgrid">${cards}</div><div class="cc"><div class="slbl">Daily completion</div><div class="bars">${bars}</div><div class="bar-lbls">${lbls}</div></div>${twrows?`<div class="wc"><div class="slbl" style="margin-bottom:12px">Workout breakdown</div>${twrows}</div>`:''} ${wChart}`;
 }
 
 document.getElementById('hdate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
