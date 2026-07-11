@@ -15,7 +15,7 @@
 :root{
   --g:#1D9E75;--gl:#E1F5EE;--gd:#0F6E56;--gm:#5DCAA5;
   --b:#2980B9;--bl:#E8F4FD;--bd2:#1A6A9A;
-  --p:#7C5CBF;--pl:#F0EAFA;
+  --p:#7C5CBF;--pl:#F0EAFA;--pd:#5A3D9A;
   --bg:#F5F3EE;--card:#FFFFFF;
   --t:#1C1C1C;--t2:#6B6B6B;--t3:#ADADAD;--bd:#EAEAE8;
   --r:14px;--rs:9px;
@@ -28,7 +28,6 @@ header{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px
 .ht{font-size:22px;font-weight:600;color:var(--t)}
 main{padding:14px 14px calc(76px + var(--sb))}
 
-/* PROGRESS */
 .prog-card{background:var(--card);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .prog-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
 .prog-t{font-size:13px;color:var(--t2)}.prog-p{font-size:13px;font-weight:600;color:var(--gd)}
@@ -36,7 +35,6 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .prog-fill{height:100%;background:var(--g);border-radius:3px;transition:width .35s cubic-bezier(.4,0,.2,1)}
 .prog-track.blue{background:var(--bl)}.prog-fill.blue{background:var(--b)}
 
-/* CHECKLIST */
 .list{display:flex;flex-direction:column;gap:5px}
 .item{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .item.done{box-shadow:0 1px 3px rgba(29,158,117,.1),0 0 0 1px rgba(29,158,117,.25)}
@@ -51,7 +49,6 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .pill{font-size:12px;font-weight:500;font-family:'Outfit',sans-serif;padding:5px 12px;border-radius:20px;border:1.5px solid var(--bd);background:var(--bg);color:var(--t2);cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent}
 .pill.on{border-color:var(--g);background:var(--gl);color:var(--gd)}
 
-/* LOG CARDS */
 .log-card{background:var(--card);border-radius:var(--r);padding:16px;margin-top:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .log-head{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
 .log-num{font-size:30px;font-weight:600;color:var(--t);line-height:1}.log-num.hit{color:var(--gd)}.log-num.hit-b{color:var(--bd2)}
@@ -62,14 +59,12 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .log-del{width:28px;height:28px;border:none;background:none;color:var(--t3);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:6px;padding:0;line-height:1;-webkit-tap-highlight-color:transparent;flex-shrink:0}
 .log-del:active{background:var(--bd)}.log-empty{font-size:13px;color:var(--t3);padding:10px 0 4px;text-align:center}
 .log-add{display:flex;gap:7px;margin-top:12px;align-items:center}
-.log-add-lbl{flex:1;min-width:0;height:38px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;color:var(--t);background:var(--bg);outline:none;padding:0 10px;transition:border-color .2s}
-.log-add-lbl:focus{border-color:var(--g)}
+.log-add-lbl{flex:1;min-width:0;height:38px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;color:var(--t);background:var(--bg);outline:none;padding:0 10px}
 .log-add-val{width:58px;height:38px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;color:var(--t);text-align:center;background:var(--bg);outline:none;-moz-appearance:textfield;flex-shrink:0}
 .log-add-val::-webkit-outer-spin-button,.log-add-val::-webkit-inner-spin-button{-webkit-appearance:none}
 .log-add-btn{width:38px;height:38px;border-radius:var(--rs);border:none;background:var(--g);color:#fff;font-size:24px;font-weight:300;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;line-height:1;padding-bottom:1px}
 .log-add-btn:active{opacity:.82}.log-add-btn.blue{background:var(--b)}
 
-/* BOTTOM CARDS */
 .bc{background:var(--card);border-radius:var(--r);padding:14px 16px;margin-top:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .slbl{font-size:11px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px}
 .erow{display:flex;gap:7px}
@@ -78,7 +73,6 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .nin{width:100%;border:none;outline:none;font-family:'Outfit',sans-serif;font-size:14px;line-height:1.55;color:var(--t);background:transparent;resize:none}
 .nin::placeholder{color:var(--t3)}
 
-/* MEAL GUIDE */
 .mg-section{background:var(--card);border-radius:var(--r);margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd);overflow:hidden}
 .mg-header{padding:14px 16px 0}.mg-title{font-size:15px;font-weight:600;color:var(--t);margin-bottom:2px}.mg-sub{font-size:12px;color:var(--t3);margin-bottom:12px}
 .mg-row{display:flex;align-items:baseline;justify-content:space-between;padding:9px 16px;border-top:1px solid var(--bd)}
@@ -96,11 +90,16 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .mg-add-btn{width:36px;height:36px;border-radius:var(--rs);border:none;background:var(--g);color:#fff;font-size:22px;font-weight:300;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;line-height:1;padding-bottom:1px}
 .mg-add-btn:active{opacity:.82}.mg-add-btn.blue{background:var(--b)}
 
-/* SUMMARY */
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 .sc{background:var(--card);border-radius:var(--r);padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .sc-l{font-size:10px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
 .sc-v{font-size:28px;font-weight:600;color:var(--t);line-height:1;margin-bottom:3px}.sc-s{font-size:11px;color:var(--t3)}
+.sc-v.purple{color:var(--pd)}
+.sc-wide{background:var(--card);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd);display:flex;align-items:center;gap:14px}
+.sc-wide-v{font-size:28px;font-weight:600;color:var(--pd);line-height:1}
+.sc-wide-info{}
+.sc-wide-label{font-size:10px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+.sc-wide-sub{font-size:12px;color:var(--t2)}
 .cc{background:var(--card);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .bars{display:flex;gap:3px;align-items:flex-end;height:44px;margin:10px 0 6px}
 .barcol{flex:1;border-radius:3px 3px 0 0;min-height:3px}
@@ -125,16 +124,22 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .dose-row{display:flex;gap:6px;flex-wrap:wrap}
 .dpill{font-size:12px;font-weight:500;font-family:'Outfit',sans-serif;padding:6px 12px;border-radius:20px;border:1.5px solid var(--bd);background:var(--bg);color:var(--t2);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all .15s}
 .dpill.on{border-color:var(--g);background:var(--gl);color:var(--gd)}
+.shed-row{display:flex;gap:7px}
+.sbtn{flex:1;height:40px;border-radius:var(--rs);border:1.5px solid var(--bd);background:var(--bg);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;color:var(--t2);cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1}
+.sbtn.on{background:var(--p);border-color:var(--p);color:#fff}
+.sbtn-n{font-size:15px;font-weight:600}
+.sbtn-l{font-size:8px;opacity:.8}
 .wl-save{width:100%;height:44px;border-radius:var(--rs);border:none;background:var(--g);color:#fff;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:6px;-webkit-tap-highlight-color:transparent}
 .wl-save:active{opacity:.85}
 .wl-entries{display:flex;flex-direction:column;gap:8px}
 .wl-card{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .wl-card-body{padding:12px 14px}
 .wl-card-date{font-size:11px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-.wl-card-stats{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.wl-card-stats{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
 .wl-card-stat{display:flex;flex-direction:column;gap:1px}
-.wl-card-val{font-size:18px;font-weight:600;color:var(--t);line-height:1}.wl-card-val.green{color:var(--gd)}
+.wl-card-val{font-size:18px;font-weight:600;color:var(--t);line-height:1}.wl-card-val.green{color:var(--gd)}.wl-card-val.purple{color:var(--pd)}
 .wl-card-lbl{font-size:11px;color:var(--t3)}
+.wl-card-note{font-size:12px;color:var(--t2);margin-top:6px;padding-top:6px;border-top:1px solid var(--bd);font-style:italic}
 .wl-card-del{margin-left:auto;width:28px;height:28px;border:none;background:none;color:var(--t3);font-size:18px;cursor:pointer;border-radius:6px;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
 .wl-card-del:active{background:var(--bd)}
 .wl-setup{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
@@ -148,18 +153,15 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .hair-today{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
 .hair-today-day{font-size:13px;font-weight:600;color:var(--p);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
 .hair-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--bd);cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
-.hair-item:last-child{border-bottom:none;padding-bottom:0}
-.hair-item:first-child{padding-top:0}
+.hair-item:last-child{border-bottom:none;padding-bottom:0}.hair-item:first-child{padding-top:0}
 .hcb{width:22px;height:22px;border-radius:6px;border:2px solid var(--bd);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s cubic-bezier(.4,0,.2,1);background:var(--bg);margin-top:1px}
 .hcb.on{background:var(--p);border-color:var(--p)}
 .hcb svg{width:12px;height:12px;stroke:#fff;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.4);transition:all .2s cubic-bezier(.34,1.56,.64,1)}
 .hcb.on svg{opacity:1;transform:scale(1)}
-.hair-item-text{}
 .hair-item-name{font-size:14px;color:var(--t);line-height:1.3}
 .hair-item-note{font-size:12px;color:var(--t3);margin-top:2px;line-height:1.4}
 .hair-item.done .hair-item-name{color:var(--t3);text-decoration:line-through;text-decoration-color:var(--p)}
-
-.hair-sched{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
+.hair-sched{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd);margin-bottom:10px}
 .hair-sched-hdr{padding:14px 16px 0}
 .hair-sched-title{font-size:15px;font-weight:600;color:var(--t);margin-bottom:12px}
 .hair-sched-row{padding:10px 16px;border-top:1px solid var(--bd);display:flex;gap:12px}
@@ -167,6 +169,24 @@ main{padding:14px 14px calc(76px + var(--sb))}
 .hair-sched-tasks{font-size:13px;color:var(--t2);line-height:1.5;flex:1}
 .hair-sched-row.today-row{background:var(--pl)}
 .hair-sched-row.today-row .hair-sched-day{color:var(--p)}
+
+/* PHOTO REMINDER */
+.photo-reminder{background:var(--pl);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:0 0 0 1px rgba(124,92,191,.2);display:flex;align-items:center;gap:12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.photo-reminder.done{background:var(--bg);box-shadow:0 0 0 1px var(--bd);opacity:.7}
+.photo-pcb{width:24px;height:24px;border-radius:7px;border:2px solid rgba(124,92,191,.4);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;background:#fff}
+.photo-pcb.on{background:var(--p);border-color:var(--p)}
+.photo-pcb svg{width:13px;height:13px;stroke:#fff;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.4);transition:all .2s cubic-bezier(.34,1.56,.64,1)}
+.photo-pcb.on svg{opacity:1;transform:scale(1)}
+.photo-reminder-text{}
+.photo-reminder-title{font-size:14px;font-weight:500;color:var(--pd)}
+.photo-reminder-sub{font-size:12px;color:var(--p);margin-top:1px}
+
+/* MINOX SETUP */
+.minox-setup{background:var(--card);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05),0 0 0 1px var(--bd)}
+.minox-setup-row{display:flex;gap:8px;align-items:flex-end;margin-top:8px}
+.minox-input{flex:1;height:38px;border:1.5px solid var(--bd);border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;color:var(--t);background:var(--bg);outline:none;padding:0 10px}
+.minox-btn{height:38px;padding:0 14px;border-radius:var(--rs);border:none;background:var(--p);color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.minox-btn:active{opacity:.85}
 
 /* TABS */
 .tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid var(--bd);display:flex;padding:6px 2px calc(6px + var(--sb));z-index:100}
@@ -225,11 +245,10 @@ const ITEMS=[
   {id:'water',name:'Water 80 oz',time:'All day'},
   {id:'magnesium',name:'Magnesium',time:'Before bed'},
 ];
-
 const WT=['Day A - Lower','Day B - Upper','Day C - Full Body','Walk','Vibration Plate','Mobility','Rest'];
 const DOSES=['2.5mg','5mg','7.5mg','10mg','12.5mg','15mg'];
 const SITES=['Left abdomen','Right abdomen','Left thigh','Right thigh','Left arm','Right arm'];
-
+const SHED_LABELS=['','Minimal','Light','Moderate','Heavy','Excessive'];
 const MEAL1_DEFAULT=[
   {name:'Elevation shake + 1 cup Fage 5% yogurt',pro:'48-53g'},
   {name:'3 eggs + 4oz smoked salmon + half avocado',pro:'38g'},
@@ -254,28 +273,16 @@ const MEAL2_DEFAULT=[
   {name:'5oz pork tenderloin + sweet potato + green beans',pro:'38g'},
 ];
 const WATER_PRESETS=[
-  {name:'Coffee',oz:10},
-  {name:'Electrolyte drink',oz:16},
-  {name:'Water',oz:8},
-  {name:'Water',oz:32},
+  {name:'Coffee',oz:10},{name:'Electrolyte drink',oz:16},{name:'Water',oz:8},{name:'Water',oz:32},
 ];
-
 const HAIR_SCHEDULE={
   0:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
   1:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
   2:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
-  3:[
-    {id:'rosemary',name:'Rosemary oil',note:'Apply a few hours before shower or overnight'},
-    {id:'shampoo',name:'Shampoo',note:''},
-    {id:'minoxidil',name:'Minoxidil',note:'Apply once hair and scalp are completely dry'},
-  ],
+  3:[{id:'rosemary',name:'Rosemary oil',note:'Apply a few hours before shower or overnight'},{id:'shampoo',name:'Shampoo',note:''},{id:'minoxidil',name:'Minoxidil',note:'Apply once hair and scalp are completely dry'}],
   4:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
   5:[{id:'minoxidil',name:'Minoxidil',note:'Evening'}],
-  6:[
-    {id:'rosemary',name:'Rosemary oil',note:''},
-    {id:'shampoo',name:'Shampoo',note:''},
-    {id:'minoxidil',name:'Minoxidil',note:'Apply after scalp is dry'},
-  ],
+  6:[{id:'rosemary',name:'Rosemary oil',note:''},{id:'shampoo',name:'Shampoo',note:''},{id:'minoxidil',name:'Minoxidil',note:'Apply after scalp is dry'}],
 };
 const DAY_NAMES=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const DAY_SHORT=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -283,6 +290,7 @@ const DAY_SHORT=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 let tab='today';
 let pendingDose='';
 let pendingSite='';
+let pendingShed=0;
 
 // ---- STORAGE ----
 function fd(d){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),dy=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${dy}`}
@@ -290,26 +298,34 @@ function doff(n){const d=new Date();d.setDate(d.getDate()-n);return fd(d)}
 function dates(n){return Array.from({length:n},(_,i)=>doff(n-1-i))}
 function empty(){return{items:{},workoutType:'',proteinLog:[],waterLog:[],energy:0,notes:''}}
 function load(date){
-  try{
-    const r=localStorage.getItem('wt_'+date);if(!r)return empty();
-    const d=JSON.parse(r);
-    if(!d.proteinLog){d.proteinLog=[];if(d.proteinAmount&&parseInt(d.proteinAmount)>0)d.proteinLog=[{label:'Logged',grams:parseInt(d.proteinAmount)}];}
-    if(!d.waterLog)d.waterLog=[];return d;
-  }catch{return empty()}
+  try{const r=localStorage.getItem('wt_'+date);if(!r)return empty();const d=JSON.parse(r);
+  if(!d.proteinLog){d.proteinLog=[];if(d.proteinAmount&&parseInt(d.proteinAmount)>0)d.proteinLog=[{label:'Logged',grams:parseInt(d.proteinAmount)}];}
+  if(!d.waterLog)d.waterLog=[];return d;}catch{return empty()}
 }
 function save(date,log){try{localStorage.setItem('wt_'+date,JSON.stringify(log))}catch{}}
 function loadMeals(){try{const r=localStorage.getItem('wt_meals');return r?JSON.parse(r):{meal1:[],snack:[],meal2:[],water:[]}}catch{return{meal1:[],snack:[],meal2:[],water:[]}}}
 function saveMeals(m){try{localStorage.setItem('wt_meals',JSON.stringify(m))}catch{}}
-function loadWeekly(){try{const r=localStorage.getItem('wt_weekly');return r?JSON.parse(r):{startWeight:null,startDate:null,entries:[]}}catch{return{startWeight:null,startDate:null,entries:[]}}}
+function loadWeekly(){try{const r=localStorage.getItem('wt_weekly');return r?JSON.parse(r):{startWeight:null,entries:[]}}catch{return{startWeight:null,entries:[]}}}
 function saveWeekly(w){try{localStorage.setItem('wt_weekly',JSON.stringify(w))}catch{}}
 function loadHair(date){try{const r=localStorage.getItem('wt_hair_'+date);return r?JSON.parse(r):{}}catch{return{}}}
 function saveHair(date,data){try{localStorage.setItem('wt_hair_'+date,JSON.stringify(data))}catch{}}
+function loadMinoxStart(){try{return localStorage.getItem('wt_minox_start')||''}catch{return''}}
+function saveMinoxStart(d){try{localStorage.setItem('wt_minox_start',d)}catch{}}
+function loadPhotoDone(ym){try{return localStorage.getItem('wt_photo_'+ym)==='1'}catch{return false}}
+function savePhotoDone(ym,v){try{localStorage.setItem('wt_photo_'+ym,v?'1':'0')}catch{}}
 function ptTotal(log){return(log.proteinLog||[]).reduce((a,b)=>a+(b.grams||0),0)}
 function wtTotal(log){return(log.waterLog||[]).reduce((a,b)=>a+(b.oz||0),0)}
 
+function getMinoxWeeks(){
+  const s=loadMinoxStart();if(!s)return null;
+  const start=new Date(s+'T12:00:00');const now=new Date();
+  const ms=now-start;const weeks=Math.floor(ms/(7*24*60*60*1000));
+  return weeks>=0?weeks:null;
+}
+
 // ---- ROUTING ----
 function go(t){
-  tab=t;pendingDose='';pendingSite='';
+  tab=t;pendingDose='';pendingSite='';pendingShed=0;
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
   document.getElementById('t-'+t).classList.add('on');
   render(true);
@@ -336,13 +352,11 @@ function dayHTML(date){
     return `<div class="item${ch?' done':''}"><div class="irow${ch?' done':''}" onclick="toggle('${date}','${item.id}')"><div class="cb${ch?' on':''}"><svg viewBox="0 0 13 13"><polyline points="1.5,6.5 5,10 11.5,3"/></svg></div><div><div class="iname">${item.name}</div><div class="itime">${item.time}</div></div></div>${extra}</div>`;
   }).join('');
   const ebtns=[1,2,3,4,5].map(n=>`<button class="ebtn${log.energy===n?' on':''}" onclick="setE('${date}',${n})">${n}</button>`).join('');
-  return `
-    <div class="prog-card"><div class="prog-row"><span class="prog-t">${done} of ${ITEMS.length} done</span><span class="prog-p">${p}%</span></div><div class="prog-track"><div class="prog-fill" style="width:${p}%"></div></div></div>
-    <div class="list">${rows}</div>
-    ${logCardHTML('protein',date,log)}
-    ${logCardHTML('water',date,log)}
-    <div class="bc"><div class="slbl">Energy today (1 = drained, 5 = strong)</div><div class="erow">${ebtns}</div></div>
-    <div class="bc"><div class="slbl">Notes</div><textarea class="nin" rows="2" placeholder="Optional..." oninput="setN('${date}',this.value)">${log.notes||''}</textarea></div>`;
+  return `<div class="prog-card"><div class="prog-row"><span class="prog-t">${done} of ${ITEMS.length} done</span><span class="prog-p">${p}%</span></div><div class="prog-track"><div class="prog-fill" style="width:${p}%"></div></div></div>
+  <div class="list">${rows}</div>
+  ${logCardHTML('protein',date,log)}${logCardHTML('water',date,log)}
+  <div class="bc"><div class="slbl">Energy today (1 = drained, 5 = strong)</div><div class="erow">${ebtns}</div></div>
+  <div class="bc"><div class="slbl">Notes</div><textarea class="nin" rows="2" placeholder="Optional..." oninput="setN('${date}',this.value)">${log.notes||''}</textarea></div>`;
 }
 
 function logCardHTML(type,date,log){
@@ -370,15 +384,13 @@ function addMealToLog(name,pro){
   const grams=parseGrams(pro);if(!grams)return;
   const date=doff(0);const log=load(date);
   if(!log.proteinLog)log.proteinLog=[];
-  log.proteinLog.push({label:name,grams});
-  log.items.protein=ptTotal(log)>=125;
+  log.proteinLog.push({label:name,grams});log.items.protein=ptTotal(log)>=125;
   save(date,log);showToast('+'+grams+'g added to today');
 }
 function addWaterPreset(label,oz){
   const date=doff(0);const log=load(date);
   if(!log.waterLog)log.waterLog=[];
-  log.waterLog.push({label,oz});
-  log.items.water=wtTotal(log)>=80;
+  log.waterLog.push({label,oz});log.items.water=wtTotal(log)>=80;
   save(date,log);showToast('+'+oz+'oz added to today');
 }
 function showToast(msg){
@@ -420,41 +432,52 @@ function delMeal(key,idx){const cm=loadMeals();if(!cm[key])return;cm[key].splice
 
 // ---- HAIR ----
 function hairHTML(){
-  const today=new Date();
-  const dow=today.getDay();
-  const dateStr=doff(0);
+  const today=new Date();const dow=today.getDay();const dateStr=doff(0);
   const tasks=HAIR_SCHEDULE[dow]||[];
   const hairLog=loadHair(dateStr);
   const allDone=tasks.length>0&&tasks.every(t=>hairLog[t.id]);
-
   const taskItems=tasks.map(t=>{
     const done=!!hairLog[t.id];
-    return `<div class="hair-item${done?' done':''}" onclick="toggleHair('${dateStr}','${t.id}')"><div class="hcb${done?' on':''}"><svg viewBox="0 0 13 13"><polyline points="1.5,6.5 5,10 11.5,3"/></svg></div><div class="hair-item-text"><div class="hair-item-name">${t.name}</div>${t.note?`<div class="hair-item-note">${t.note}</div>`:''}</div></div>`;
+    return `<div class="hair-item${done?' done':''}" onclick="toggleHair('${dateStr}','${t.id}')"><div class="hcb${done?' on':''}"><svg viewBox="0 0 13 13"><polyline points="1.5,6.5 5,10 11.5,3"/></svg></div><div><div class="hair-item-name">${t.name}</div>${t.note?`<div class="hair-item-note">${t.note}</div>`:''}</div></div>`;
   }).join('');
+
+  // Minoxidil setup & counter
+  const minoxStart=loadMinoxStart();
+  const weeks=getMinoxWeeks();
+  const minoxCard=`<div class="minox-setup"><div class="slbl">Minoxidil start date</div>
+    ${weeks!==null?`<div style="margin-bottom:8px"><span style="font-size:22px;font-weight:600;color:var(--pd)">Week ${weeks}</span><span style="font-size:13px;color:var(--t2);margin-left:8px">since ${new Date(minoxStart+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span></div>`:''}
+    <div class="minox-setup-row"><input class="minox-input" id="minox-date-in" type="date" value="${minoxStart||doff(0)}"><button class="minox-btn" onclick="setMinoxStart()">Save</button></div>
+  </div>`;
+
+  // Monthly photo reminder
+  const ym=fd(today).slice(0,7);
+  const photoDone=loadPhotoDone(ym);
+  const monthName=today.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+  const photoCard=`<div class="photo-reminder${photoDone?' done':''}" onclick="togglePhoto('${ym}')">
+    <div class="photo-pcb${photoDone?' on':''}"><svg viewBox="0 0 13 13"><polyline points="1.5,6.5 5,10 11.5,3"/></svg></div>
+    <div class="photo-reminder-text">
+      <div class="photo-reminder-title">${photoDone?'Monthly photo taken':'Take your monthly hair photo'}</div>
+      <div class="photo-reminder-sub">${monthName} &nbsp;·&nbsp; Same spot, same lighting</div>
+    </div>
+  </div>`;
 
   const weekRows=DAY_NAMES.map((day,i)=>{
     const isToday=i===dow;
     const sched=HAIR_SCHEDULE[i]||[];
-    const taskText=sched.map(t=>t.name+(t.note?` (${t.note})`:'.')).join(' · ');
+    const taskText=sched.map(t=>t.name+(t.note?' ('+t.note+')':'.')).join(' · ');
     return `<div class="hair-sched-row${isToday?' today-row':''}"><div class="hair-sched-day">${DAY_SHORT[i]}</div><div class="hair-sched-tasks">${taskText}</div></div>`;
   }).join('');
 
-  return `
-    <div class="hair-today">
-      <div class="hair-today-day">${DAY_NAMES[dow]} ${allDone?'&#10003;':''}</div>
-      ${tasks.length?taskItems:'<div style="font-size:13px;color:var(--t3)">Nothing scheduled today.</div>'}
-    </div>
-    <div class="hair-sched">
-      <div class="hair-sched-hdr"><div class="hair-sched-title">Weekly schedule</div></div>
-      ${weekRows}
-    </div>`;
+  return `${photoCard}${minoxCard}
+    <div class="hair-today"><div class="hair-today-day">${DAY_NAMES[dow]}${allDone?' &#10003;':''}</div>${tasks.length?taskItems:'<div style="font-size:13px;color:var(--t3)">Nothing scheduled today.</div>'}</div>
+    <div class="hair-sched"><div class="hair-sched-hdr"><div class="hair-sched-title">Weekly schedule</div></div>${weekRows}</div>`;
 }
-function toggleHair(date,id){
-  const data=loadHair(date);
-  data[id]=!data[id];
-  saveHair(date,data);
-  render(false);
+function toggleHair(date,id){const data=loadHair(date);data[id]=!data[id];saveHair(date,data);render(false);}
+function setMinoxStart(){
+  const v=document.getElementById('minox-date-in').value;
+  if(!v)return;saveMinoxStart(v);showToast('Start date saved');render(false);
 }
+function togglePhoto(ym){const done=loadPhotoDone(ym);savePhotoDone(ym,!done);render(false);}
 
 // ---- WEEKLY LOG ----
 function weeklyHTML(){
@@ -467,22 +490,46 @@ function weeklyHTML(){
   const setupHTML=`<div class="wl-setup"><div class="slbl">Starting weight</div><div class="wl-setup-row"><input class="wl-input" id="sw-input" type="number" placeholder="e.g. 155" value="${sw||''}" step="0.1"><button class="wl-setup-btn" onclick="setStartWeight()">Save</button></div></div>`;
   const dosePills=DOSES.map(d=>`<button class="dpill${pendingDose===d?' on':''}" onclick="pickDose('${d}')">${d}</button>`).join('');
   const sitePills=SITES.map(s=>`<button class="dpill spill${pendingSite===s?' on':''}" onclick="pickSite('${s}')">${s}</button>`).join('');
-  const formHTML=`<div class="wl-form"><div class="slbl">Add weekly entry</div><div class="wl-field"><div class="wl-label">Date</div><input class="wl-input" id="wl-date" type="date" value="${doff(0)}"></div><div class="wl-field"><div class="wl-label">Dosage</div><div class="dose-row">${dosePills}</div></div><div class="wl-field"><div class="wl-label">Weight (lbs)</div><input class="wl-input" id="wl-weight" type="number" placeholder="e.g. 148.5" step="0.1"></div><div class="wl-field"><div class="wl-label">Injection site</div><div class="dose-row">${sitePills}</div></div><button class="wl-save" onclick="saveEntry()">Save Entry</button></div>`;
-  const historyHTML=entries.length?`<div class="wl-divider">History</div><div class="wl-entries">${entries.map((e,i)=>{const lost=sw?(sw-e.weight).toFixed(1):null;const lostStr=lost?(parseFloat(lost)>0?'-'+lost+' lbs':'0 lbs'):'';const dateStr=new Date(e.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});return `<div class="wl-card"><div class="wl-card-body"><div class="wl-card-date">${dateStr}</div><div class="wl-card-stats"><div class="wl-card-stat"><div class="wl-card-val">${e.dosage||'--'}</div><div class="wl-card-lbl">Dosage</div></div><div class="wl-card-stat"><div class="wl-card-val">${e.weight} lbs</div><div class="wl-card-lbl">Weight</div></div>${lost?`<div class="wl-card-stat"><div class="wl-card-val green">${lostStr}</div><div class="wl-card-lbl">From start</div></div>`:''} ${e.site?`<div class="wl-card-stat" style="min-width:90px"><div class="wl-card-val" style="font-size:13px;line-height:1.3">${e.site}</div><div class="wl-card-lbl">Injection site</div></div>`:''}<button class="wl-card-del" onclick="delEntry(${i})">&#215;</button></div></div></div>`;}).join('')}</div>`:'';
+  const shedBtns=[1,2,3,4,5].map(n=>`<button class="sbtn${pendingShed===n?' on':''}" onclick="pickShed(${n})"><span class="sbtn-n">${n}</span><span class="sbtn-l">${SHED_LABELS[n]}</span></button>`).join('');
+  const formHTML=`<div class="wl-form"><div class="slbl">Add weekly entry</div>
+    <div class="wl-field"><div class="wl-label">Date</div><input class="wl-input" id="wl-date" type="date" value="${doff(0)}"></div>
+    <div class="wl-field"><div class="wl-label">Dosage</div><div class="dose-row">${dosePills}</div></div>
+    <div class="wl-field"><div class="wl-label">Weight (lbs)</div><input class="wl-input" id="wl-weight" type="number" placeholder="e.g. 148.5" step="0.1"></div>
+    <div class="wl-field"><div class="wl-label">Injection site</div><div class="dose-row">${sitePills}</div></div>
+    <div class="wl-field"><div class="wl-label">Shedding level</div><div class="shed-row">${shedBtns}</div></div>
+    <div class="wl-field"><div class="wl-label">Hair note (optional)</div><textarea class="wl-input nin" id="wl-hair-note" rows="2" placeholder="New growth, scalp condition, observations..." style="height:auto;padding:10px 12px"></textarea></div>
+    <button class="wl-save" onclick="saveEntry()">Save Entry</button>
+  </div>`;
+  const historyHTML=entries.length?`<div class="wl-divider">History</div><div class="wl-entries">${entries.map((e,i)=>{
+    const lost=sw?(sw-e.weight).toFixed(1):null;
+    const lostStr=lost?(parseFloat(lost)>0?'-'+lost+' lbs':'0 lbs'):'';
+    const dateStr=new Date(e.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    const shedStr=e.shedding?`${e.shedding} - ${SHED_LABELS[e.shedding]}`:'';
+    return `<div class="wl-card"><div class="wl-card-body"><div class="wl-card-date">${dateStr}</div><div class="wl-card-stats">
+      <div class="wl-card-stat"><div class="wl-card-val">${e.dosage||'--'}</div><div class="wl-card-lbl">Dosage</div></div>
+      <div class="wl-card-stat"><div class="wl-card-val">${e.weight} lbs</div><div class="wl-card-lbl">Weight</div></div>
+      ${lost?`<div class="wl-card-stat"><div class="wl-card-val green">${lostStr}</div><div class="wl-card-lbl">From start</div></div>`:''}
+      ${e.site?`<div class="wl-card-stat" style="min-width:90px"><div class="wl-card-val" style="font-size:13px;line-height:1.3">${e.site}</div><div class="wl-card-lbl">Site</div></div>`:''}
+      ${shedStr?`<div class="wl-card-stat"><div class="wl-card-val purple" style="font-size:15px">${shedStr}</div><div class="wl-card-lbl">Shedding</div></div>`:''}
+      <button class="wl-card-del" onclick="delEntry(${i})">&#215;</button>
+    </div>${e.hairNote?`<div class="wl-card-note">${e.hairNote}</div>`:''}</div></div>`;
+  }).join('')}</div>`:'';
   return `${statsHTML}${setupHTML}${formHTML}${historyHTML}`;
 }
 function setStartWeight(){const v=parseFloat(document.getElementById('sw-input').value);if(!v||v<=0)return;const w=loadWeekly();w.startWeight=v;saveWeekly(w);showToast('Starting weight saved');render(false);}
 function pickDose(d){pendingDose=pendingDose===d?'':d;document.querySelectorAll('.dpill:not(.spill)').forEach(b=>b.classList.toggle('on',b.textContent===pendingDose));}
 function pickSite(s){pendingSite=pendingSite===s?'':s;document.querySelectorAll('.spill').forEach(b=>b.classList.toggle('on',b.textContent===pendingSite));}
+function pickShed(n){pendingShed=pendingShed===n?0:n;document.querySelectorAll('.sbtn').forEach((b,i)=>b.classList.toggle('on',i+1===pendingShed));}
 function saveEntry(){
   const dateIn=document.getElementById('wl-date');const weightIn=document.getElementById('wl-weight');
+  const hairNoteIn=document.getElementById('wl-hair-note');
   const date=dateIn?dateIn.value:'';const weight=parseFloat(weightIn?weightIn.value:'');
   if(!date){showToast('Pick a date');return;}if(!weight||weight<=0){showToast('Enter your weight');return;}
   const w=loadWeekly();if(!w.entries)w.entries=[];
   const existing=w.entries.findIndex(e=>e.date===date);
-  const entry={date,dosage:pendingDose||'',weight,site:pendingSite||''};
+  const entry={date,dosage:pendingDose||'',weight,site:pendingSite||'',shedding:pendingShed||0,hairNote:hairNoteIn?hairNoteIn.value.trim():''};
   if(existing>=0)w.entries[existing]=entry;else w.entries.push(entry);
-  saveWeekly(w);pendingDose='';pendingSite='';showToast('Entry saved');render(false);
+  saveWeekly(w);pendingDose='';pendingSite='';pendingShed=0;showToast('Entry saved');render(false);
 }
 function delEntry(sortedIdx){const w=loadWeekly();const entries=[...(w.entries||[])].sort((a,b)=>b.date.localeCompare(a.date));const target=entries[sortedIdx];if(!target)return;w.entries=w.entries.filter(e=>e.date!==target.date);saveWeekly(w);render(false);}
 
@@ -491,25 +538,21 @@ function addPR(date){
   const lblIn=document.getElementById('ptlbl-'+date);const gIn=document.getElementById('ptg-'+date);
   const grams=parseInt(gIn.value||0);if(!grams||grams<=0){gIn.focus();return}
   const log=load(date);if(!log.proteinLog)log.proteinLog=[];
-  log.proteinLog.push({label:lblIn.value.trim()||'Meal',grams});
-  log.items.protein=ptTotal(log)>=125;save(date,log);lblIn.value='';gIn.value='';
-  render(false);setTimeout(()=>{const g=document.getElementById('ptg-'+date);if(g)g.focus()},50);
+  log.proteinLog.push({label:lblIn.value.trim()||'Meal',grams});log.items.protein=ptTotal(log)>=125;
+  save(date,log);lblIn.value='';gIn.value='';render(false);
+  setTimeout(()=>{const g=document.getElementById('ptg-'+date);if(g)g.focus()},50);
 }
 function delPR(date,idx){const log=load(date);if(!log.proteinLog)return;log.proteinLog.splice(idx,1);log.items.protein=ptTotal(log)>=125;save(date,log);render(false);}
 function addW(date){
   const lblIn=document.getElementById('wlbl-'+date);const ozIn=document.getElementById('woz-'+date);
   const oz=parseInt(ozIn.value||0);if(!oz||oz<=0){ozIn.focus();return}
   const log=load(date);if(!log.waterLog)log.waterLog=[];
-  log.waterLog.push({label:lblIn.value.trim()||'Water',oz});
-  log.items.water=wtTotal(log)>=80;save(date,log);lblIn.value='';ozIn.value='';
-  render(false);setTimeout(()=>{const g=document.getElementById('woz-'+date);if(g)g.focus()},50);
+  log.waterLog.push({label:lblIn.value.trim()||'Water',oz});log.items.water=wtTotal(log)>=80;
+  save(date,log);lblIn.value='';ozIn.value='';render(false);
+  setTimeout(()=>{const g=document.getElementById('woz-'+date);if(g)g.focus()},50);
 }
 function delW(date,idx){const log=load(date);if(!log.waterLog)return;log.waterLog.splice(idx,1);log.items.water=wtTotal(log)>=80;save(date,log);render(false);}
-function toggle(date,id){
-  const log=load(date);log.items[id]=!log.items[id];
-  if(!log.items[id]&&id==='workout')log.workoutType='';
-  save(date,log);render(false);
-}
+function toggle(date,id){const log=load(date);log.items[id]=!log.items[id];if(!log.items[id]&&id==='workout')log.workoutType='';save(date,log);render(false);}
 function setWT(e,date,type){
   e.stopPropagation();const log=load(date);log.workoutType=log.workoutType===type?'':type;save(date,log);
   e.target.closest('.sub').querySelectorAll('.pill').forEach(p=>p.classList.toggle('on',p.textContent===log.workoutType));
@@ -519,18 +562,12 @@ function setN(date,val){const log=load(date);log.notes=val;save(date,log);}
 
 // ---- SUMMARY + WEIGHT CHART ----
 function weightChartHTML(){
-  const w=loadWeekly();
-  const all=[...(w.entries||[])].sort((a,b)=>a.date.localeCompare(b.date));
+  const w=loadWeekly();const all=[...(w.entries||[])].sort((a,b)=>a.date.localeCompare(b.date));
   if(all.length<1)return '';
-  const sw=w.startWeight;
-  const W=320,H=130,PL=38,PR=12,PT=10,PB=26;
-  const plotW=W-PL-PR,plotH=H-PT-PB;
-  const weights=all.map(e=>e.weight);
-  const allVals=sw?[...weights,sw]:weights;
-  const minW=Math.min(...allVals)-2;const maxW=Math.max(...allVals)+2;
-  const range=maxW-minW||1;
-  const toX=i=>PL+(i/(Math.max(all.length-1,1)))*plotW;
-  const toY=v=>PT+plotH-((v-minW)/range)*plotH;
+  const sw=w.startWeight;const W=320,H=130,PL=38,PR=12,PT=10,PB=26;
+  const plotW=W-PL-PR,plotH=H-PT-PB;const weights=all.map(e=>e.weight);
+  const allVals=sw?[...weights,sw]:weights;const minW=Math.min(...allVals)-2;const maxW=Math.max(...allVals)+2;
+  const range=maxW-minW||1;const toX=i=>PL+(i/(Math.max(all.length-1,1)))*plotW;const toY=v=>PT+plotH-((v-minW)/range)*plotH;
   const pts=all.map((e,i)=>toX(i)+','+toY(e.weight)).join(' ');
   const area='<polygon points="'+PL+','+(PT+plotH)+' '+pts+' '+toX(all.length-1)+','+(PT+plotH)+'" fill="url(#wg)" opacity="0.2"/>';
   const line='<polyline points="'+pts+'" fill="none" stroke="#1D9E75" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
@@ -540,11 +577,18 @@ function weightChartHTML(){
   const yVals=[minW+2,minW+(maxW-minW)/2,maxW-2];
   const yLbls=yVals.map(v=>'<text x="'+(PL-5)+'" y="'+(toY(v)+4)+'" text-anchor="end" font-size="9" fill="#ADADAD" font-family="Outfit,sans-serif">'+Math.round(v)+'</text>').join('');
   const swLine=sw?'<line x1="'+PL+'" y1="'+toY(sw)+'" x2="'+(W-PR)+'" y2="'+toY(sw)+'" stroke="#EAEAE8" stroke-width="1.5" stroke-dasharray="4,3"/><text x="'+(PL+4)+'" y="'+(toY(sw)-4)+'" font-size="9" fill="#ADADAD" font-family="Outfit,sans-serif">start</text>':'';
-  const latest=all[all.length-1];
-  const lost=sw&&latest?(sw-latest.weight).toFixed(1):null;
+  const latest=all[all.length-1];const lost=sw&&latest?(sw-latest.weight).toFixed(1):null;
   const lostBadge=(lost&&parseFloat(lost)>0)?'<div style="margin-top:10px;display:flex;gap:8px;align-items:center"><span style="font-size:22px;font-weight:600;color:#0F6E56">-'+lost+'</span><span style="font-size:13px;color:#6B6B6B"> lbs lost since you started</span></div>':'';
   return '<div class="cc"><div class="slbl">Weight progress</div><svg width="100%" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1D9E75"/><stop offset="100%" stop-color="#1D9E75" stop-opacity="0"/></linearGradient></defs>'+swLine+area+line+dots+yLbls+xLbls+'</svg>'+lostBadge+'</div>';
 }
+
+function minoxBannerHTML(){
+  const weeks=getMinoxWeeks();if(weeks===null)return '';
+  const start=loadMinoxStart();
+  const startFmt=new Date(start+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  return `<div class="sc-wide"><div class="sc-wide-v">Week ${weeks}</div><div class="sc-wide-info"><div class="sc-wide-label">Minoxidil</div><div class="sc-wide-sub">Started ${startFmt}</div></div></div>`;
+}
+
 function sumHTML(ds,label,showWeight){
   const logs=ds.map(d=>load(d));
   const wo=logs.filter(l=>l.items.workout).length;
@@ -558,7 +602,8 @@ function sumHTML(ds,label,showWeight){
   const types={};logs.forEach(l=>{if(l.workoutType&&l.workoutType!=='Rest')types[l.workoutType]=(types[l.workoutType]||0)+1});
   const twrows=Object.entries(types).sort((a,b)=>b[1]-a[1]).map(([t,c])=>{const w=wo>0?Math.round(c/wo*100):0;return `<div class="wr"><span class="wn">${t}</span><div class="wtr"><div class="wf" style="width:${w}%"></div></div><span class="wct">${c}</span></div>`;}).join('');
   const wChart=showWeight?weightChartHTML():'';
-  return `<div style="margin-bottom:10px"><div class="slbl">${label}</div></div><div class="sgrid">${cards}</div><div class="cc"><div class="slbl">Daily completion</div><div class="bars">${bars}</div><div class="bar-lbls">${lbls}</div></div>${twrows?`<div class="wc"><div class="slbl" style="margin-bottom:12px">Workout breakdown</div>${twrows}</div>`:''} ${wChart}`;
+  const minoxBanner=minoxBannerHTML();
+  return `<div style="margin-bottom:10px"><div class="slbl">${label}</div></div>${minoxBanner}<div class="sgrid">${cards}</div><div class="cc"><div class="slbl">Daily completion</div><div class="bars">${bars}</div><div class="bar-lbls">${lbls}</div></div>${twrows?`<div class="wc"><div class="slbl" style="margin-bottom:12px">Workout breakdown</div>${twrows}</div>`:''} ${wChart}`;
 }
 
 document.getElementById('hdate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
