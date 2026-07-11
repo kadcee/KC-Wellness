@@ -326,7 +326,11 @@ function ptTotal(log){return(log.proteinLog||[]).reduce((a,b)=>a+(b.grams||0),0)
 function wtTotal(log){return(log.waterLog||[]).reduce((a,b)=>a+(b.oz||0),0)}
 function getMinoxWeeks(){
   const s=loadMinoxStart();if(!s)return null;
-  const ms=new Date()-new Date(s+'T12:00:00');
+  const now=new Date();
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const parts=s.split('-');
+  const start=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+  const ms=today-start;
   const w=Math.floor(ms/(7*24*60*60*1000));return w>=0?w:null;
 }
 
